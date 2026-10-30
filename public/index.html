@@ -1,20 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gemini AI Chatbot</title>
+  <title>Triva - AI Travel Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="container">
-    <h1>Gemini AI Chatbot</h1>
-    <div id="chat-box" class="chat-box"></div>
-    <form id="chat-form">
-      <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required />
-      <button type="submit">Send</button>
-    </form>
+  <div class="chat-app">
+    <!-- Header -->
+    <header class="chat-header">
+      <div class="header-left">
+        <div class="avatar-wrapper">
+          <div class="bot-avatar">✈️</div>
+          <span class="status-indicator" title="Online"></span>
+        </div>
+        <div class="header-info">
+          <div class="title-row">
+            <h2>Triva</h2>
+            <span class="badge">Travel AI</span>
+          </div>
+          <p class="subtitle">Konsultan liburan & itinerary pribadimu</p>
+        </div>
+      </div>
+      <button type="button" id="reset-btn" class="reset-btn" title="Mulai percakapan baru" aria-label="Reset percakapan">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+          <path d="M3 3v5h5"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Chat Box -->
+    <main id="chat-box" class="chat-box">
+      <!-- Welcome card -->
+      <div class="welcome-card" id="welcome-card">
+        <div class="welcome-icon">🌴</div>
+        <h3>Halo! Mau liburan ke mana kali ini?</h3>
+        <p>Saya Triva, travel assistant pribadimu. Ceritakan destinasi impian atau pilih ide cepat di bawah:</p>
+        <div class="suggestion-chips">
+          <button type="button" class="chip">🏖️ Rekomendasi liburan 3 hari di Bali</button>
+          <button type="button" class="chip">🎒 Backpacker hemat ke Jepang 7 hari</button>
+          <button type="button" class="chip">⛰️ Itinerary santai akhir pekan ke Bromo</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Input Form -->
+    <footer class="chat-footer">
+      <form id="chat-form">
+        <input 
+          type="text" 
+          id="user-input" 
+          placeholder="Tanyakan rencana liburanmu ke Triva..." 
+          autocomplete="off" 
+          required 
+        />
+        <button type="submit" id="send-btn" aria-label="Kirim pesan">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </footer>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
